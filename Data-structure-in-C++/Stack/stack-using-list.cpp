@@ -1,13 +1,7 @@
-/**
- * @Author: Aditya Kumar Singh <the__martian>
- * @Email:  cr7.aditya.cs@gmail.com
- * @Last modified by:   the__martian
- */
 
-/*
- *
- *   Stack : List implementation
- *
+/**
+ * @author : Aditya Kumar Singh
+ * Stack : Linked list implementation
  */
 
 #include <iostream>

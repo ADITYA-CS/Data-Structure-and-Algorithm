@@ -1,13 +1,7 @@
-/**
- * @Author: Aditya Kumar Singh <the__martian>
- * @Email:  cr7.aditya.cs@gmail.com
- * @Last modified by:   the__martian
- */
 
-/*
- *
- *   Stack : Array implementation
- *
+/**
+ * @author : Aditya Kumar Singh
+ * Stack : Array implementation
  */
 
 #include <iostream>
