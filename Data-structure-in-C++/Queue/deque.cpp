@@ -109,7 +109,7 @@ bool Deque<DequeType> :: full(){
 template <class DequeType>
 DequeType Deque<DequeType> :: front(){
     if(empty()){
-        cout << "Called front() when queue is empty.\n";
+        cout << "Called front() when deque is empty.\n";
         abort();
     }
     return deque_[front_];
@@ -118,7 +118,7 @@ DequeType Deque<DequeType> :: front(){
 template <class DequeType>
 DequeType Deque<DequeType> :: back(){
     if(empty()){
-        cout << "Called back() when queue is empty.\n";
+        cout << "Called back() when deque is empty.\n";
         abort();
     }
     return deque_[rare_];
