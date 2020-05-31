@@ -131,7 +131,7 @@ void Queue<QueueType> :: pop(){
 template <class QueueType>
 void Queue<QueueType> :: push(QueueType el){
     if(full()){
-        cout << "Stack is full\n";
+        cout << "Queue is full\n";
         return;
     }
 
