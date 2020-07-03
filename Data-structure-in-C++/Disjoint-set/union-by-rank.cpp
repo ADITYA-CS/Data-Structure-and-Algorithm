@@ -15,7 +15,7 @@ private:
     vector<int> rank_;
 
 public:
-    explicit DisjointSet(int n);
+    explicit DisjointSet(int);
     void MakeSet(int);
     int Find(int);
     void Union(int, int);
