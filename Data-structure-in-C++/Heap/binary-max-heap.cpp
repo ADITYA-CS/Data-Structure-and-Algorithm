@@ -25,7 +25,7 @@ public:
     explicit MaxHeap(int n);
     void Push(int); // pushing an element when heap is  full,
                     // may produce undefined behaviour
-    int Pop();      // poping an element when heap is empty,
+    int Pop();      // popping an element when heap is empty,
                     // may produce undefined behaviour
     int Top();
     bool Full();
