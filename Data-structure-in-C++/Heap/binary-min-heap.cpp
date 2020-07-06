@@ -29,12 +29,10 @@ private:
 public:
     explicit MinHeap(int);
     int Top() const;
-    int extract();
     void Push(int);
     int Pop();
     bool Full() const;
     bool Empty() const;
-    void Display();
 };
 
 
