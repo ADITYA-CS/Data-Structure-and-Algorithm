@@ -1,4 +1,12 @@
-#Question/
+# Extra
+*.todo
+todo.md
+C++ Container/
+Question/
+catch2/
+input
+convert.cpp
+
 
 # python stuff
 
@@ -166,9 +174,3 @@ dmypy.json
 *.exe
 *.out
 *.app
-
-
-# Extra
-*.todo
-todo.md
-C++ Container/
