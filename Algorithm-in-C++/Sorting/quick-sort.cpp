@@ -36,7 +36,7 @@ int main() {
       cin >> number;
     }
 
-    QuickSort(numbers);
+    QuickSort(numbers, 0, n - 1);
 
     cout << n << endl;
     for (auto &number : numbers) {

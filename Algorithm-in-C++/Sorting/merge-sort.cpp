@@ -62,7 +62,7 @@ int main() {
       cin >> number;
     }
 
-    MergeSort(numbers);
+    MergeSort(numbers, 0, n - 1);
 
     cout << n << endl;
     for (auto &number : numbers) {
