@@ -1,18 +1,6 @@
-<h1 align="center">DATA&ensp;STRUCTURE&ensp;AND&ensp;ALGORITHM </h1>
+<h1 align="center"> Data Structure in C++ </h1>
 
-
-
-## Introduction
-
-
-## Table of contents
-
- - [Data structure](#data-structure)
- - [Algorithms](#algorithm)
-
-
-### Data Structure
-
+## Check List
 - [ ] List
   - [x] Singly Linked List
   - [x] Doubly Linked List
@@ -51,13 +39,3 @@
   - [x] Binary Heap
   - [ ] Binomial Heap
   - [ ] Fibonacci Heap
-
-### 
-
-
-
-
-
-<!--
-### https://leetcode.com/adi-dev/
--->
