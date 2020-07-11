@@ -6,11 +6,11 @@
   - [Output Format](#output-format)
   - [Test case](#test-case)
 - Algorithm
-  - [Heap sort](../master/Algorithm-in-C%2B%2B/Sorting/heap_sort.cpp)
-  - [Merge sort](../master/Algorithm-in-C%2B%2B/Sorting/merge-sort.cpp)
-  - [Quick sort](../master/Algorithm-in-C%2B%2B/Sorting/quick-sort.cpp)
+  - [Heap sort](../Sorting/heap_sort.cpp)
+  - [Merge sort](../Sorting/merge-sort.cpp)
+  - [Quick sort](../Sorting/quick-sort.cpp)
 - Problems
-  - [Inversion - count](../master/Algorithm-in-C%2B%2B/Sorting/inversion-count.cpp)
+  - [Inversion - count](../Sorting/inversion-count.cpp)
 
 ### Input Format
 - First line contain n which is number of numbers in the input list
