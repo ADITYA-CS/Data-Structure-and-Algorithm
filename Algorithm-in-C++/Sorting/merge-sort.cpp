@@ -53,11 +53,19 @@ void MergeSort(vector<T> &A, int lo, int up){
     Merge(A, lo, mid, up);
 }
 
-int main(){
-    vector<int> v{5,4,8,9,21,0,516,35,4,168,1};
-    MergeSort(v, 0, v.size() - 1);
-    for(auto a : v){
-        cout << a << " ";
+// test
+int main() {
+    int n;
+    cin >> n;
+    vector<int> numbers(n);
+    for (auto &number : numbers) {
+      cin >> number;
     }
-    cout << "\n";
+
+    MergeSort(numbers);
+
+    cout << n << endl;
+    for (auto &number : numbers) {
+      cout << number << ' ';
+    }
 }

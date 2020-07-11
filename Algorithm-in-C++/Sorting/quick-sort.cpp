@@ -17,6 +17,7 @@ int Partiton(vector<T>&A, int p, int r){
     return i + 1;
 }
 
+
 template <class T>
 void QuickSort(vector<T>&A, int p, int r){
     if(p < r){
@@ -26,11 +27,19 @@ void QuickSort(vector<T>&A, int p, int r){
     }
 }
 
-int main(){
-    vector<int> v{5,4,8,9,21,0,516,35,4,168,1};
-    QuickSort(v, 0, v.size() - 1);
-    for(auto a : v){
-        cout << a << " ";
+// test
+int main() {
+    int n;
+    cin >> n;
+    vector<int> numbers(n);
+    for (auto &number : numbers) {
+      cin >> number;
     }
-    cout << "\n";
+
+    QuickSort(numbers);
+
+    cout << n << endl;
+    for (auto &number : numbers) {
+      cout << number << ' ';
+    }
 }
