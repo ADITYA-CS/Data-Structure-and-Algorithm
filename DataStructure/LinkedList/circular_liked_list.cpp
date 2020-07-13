@@ -3,8 +3,6 @@
  * Doubly circular list
  */
 
-//TODO: some unkown issue with PopBack
-
 #include <iostream>
 #include <algorithm>
 
@@ -31,37 +29,28 @@ public:
   void PopFront();
   void PopBack();
   void Display();
-  void rDisplay();
-  ListType back();
-  ListType front();
-  void reverse();
+  void RDisplay();
+  void Reverse();
 };
 
 
 int main() {
   CircularList<int> li;
   li.PushFront(10);
-  li.Display();
-  li.PopBack();
-  li.Display();
   li.PushFront(20);
   li.PushFront(40);
   li.Display();
-  li.PopBack();
-  li.Display();
+  li.RDisplay();
   li.PushBack(30);
   li.PushBack(50);
   li.PushFront(70);
-  li.Display();
-  li.PopBack();
-  li.Display();
   li.PushFront(80);
   li.PushFront(99);
   li.Display();
-  li.PopBack();
+  li.RDisplay();
+  li.Reverse();
   li.Display();
-
-  // li.Display();
+  li.RDisplay();
 }
 
 template <class NodeType>
@@ -98,7 +87,7 @@ void CircularList<ListType>::PushFront(ListType el) {
   } else { // case when there is more than one node
     temp->prev = tail_;
     temp->next = tail_->next;
-    tail_->prev->prev = temp;
+    tail_->next->prev = temp;
     tail_->next = temp;
   }
 }
@@ -169,4 +158,56 @@ void CircularList<ListType>::PopBack() {
 
   tail_ = tail_->prev;
   PopFront();
+}
+
+template <class ListType>
+Node<ListType> * CircularList<ListType>::search(ListType key) {
+  if(!tail_)
+    return nullptr;
+
+  auto ptr = tail_;
+  do {
+    if (ptr->data == key) {
+      return ptr;
+    }
+    ptr = ptr->next;
+  } while (ptr != tail_);
+
+  return nullptr;
+}
+
+template <class ListType>
+void CircularList<ListType>::RDisplay() {
+  cout << "List in reverse order : [";
+  if (!tail_) {
+    cout << "]\n";
+    return;
+  }
+
+  Node<ListType> *ptr = tail_;
+  while (ptr->prev != tail_) {
+    cout << ptr->data << ", ";
+    ptr = ptr->prev;
+  }
+
+  cout << ptr->data << "]\n";
+}
+
+template <class ListType>
+void CircularList<ListType>::Reverse() {
+  // when there is less than 3 elements, then do not nothing as
+  // they already satifies the condittion
+  if(!tail_ || tail_->next == tail_->prev) {
+    return;
+  }
+
+  auto ptr = tail_->next;
+  auto br = tail_->next;
+  do {
+    auto temp = ptr->next;
+    ptr->next = ptr->prev;
+    ptr->prev = temp;
+    ptr = ptr->prev;
+  } while (ptr != br);
+  tail_ = br;
 }

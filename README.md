@@ -9,7 +9,9 @@
 
  - [Data structure](#data-structure)
  - [Algorithms](#algorithm)
+ - [Coding Style](#coding-style)
 
+<hr>
 
 ### Data Structure
 
@@ -52,7 +54,10 @@
   - [ ] Binomial Heap
   - [ ] Fibonacci Heap
 
-### 
+<hr>
+
+### Coding Style
+Using <a  href="https://google.github.io/styleguide/cppguide.html" target="_blank"> goole c++ style guide</a>
 
 
 
