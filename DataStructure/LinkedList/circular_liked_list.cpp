@@ -196,7 +196,7 @@ void CircularList<ListType>::RDisplay() {
 template <class ListType>
 void CircularList<ListType>::Reverse() {
   // when there is less than 3 elements, then do not nothing as
-  // they already satifies the condittion
+  // they already satifies the condition
   if(!tail_ || tail_->next == tail_->prev) {
     return;
   }
