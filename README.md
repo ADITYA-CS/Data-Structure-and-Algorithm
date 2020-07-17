@@ -1,68 +1,123 @@
-<h1 align="center">DATA&ensp;STRUCTURE&ensp;AND&ensp;ALGORITHM </h1>
+<h1 align="center">DATA&#10240;STRUCTURE&#10240;AND&#10240;ALGORITHMS</h1>
 
+<h2>Table of contents</h2>
+<ul>
+  <li><a href="#data-structure">Data Structure</a> </li>
+  <li><a href="#algorithms">Algorithms</a></li>
+  <li><a href="#coding-style">Coding Style</a></li>
+</ul>
 
+<h2 id="data-structure">Data Structure</h2>
+<ul style="list-style-type:none;">
 
-## Introduction
+  <li>List</li>
+    <ul style="list-style-type:none;">
+      &#10003; Singly Linked List<br>
+      &#10003; Doubly Linked List<br>
+      &#10003; Circular Linked List<br>
+      &#10240; Xored Linked List<br>
+      &#10240; Skip Linked List
+    </ul>
 
+  <li>Stack</li>
+    <ul style="list-style-type:none;">
+      &#10003; using array<br>
+      &#10003; using list
+    </ul>
 
-## Table of contents
+  <li>Queue</li>
+    <ul style="list-style-type:none;">
+      &#10003; Queue <br>
+      &#10003; Circular Queue <br>
+      &#10003; Deque <br>
+      &#10003; Priority Queue (implementation using max heap)
+    </ul>
 
- - [Data structure](#data-structure)
- - [Algorithms](#algorithm)
- - [Coding Style](#coding-style)
+  <li>Tree</li>
+    <ul style="list-style-type:none;">
+      Binary Tree
+        <ul style="list-style-type:none;">
+          &#10003; Binary Search Tree <br>
+          &#10240; AVL Tree <br>
+          &#10240; Red-Black Tree <br>
+          &#10240; Splay Tree
+        </ul>
+        N-ary Tree
+        <ul style="list-style-type:none;">
+          &#10240; B Tree <br>
+          &#10240; 2-3 Tree <br>
+          &#10240; Fenwick Tree (Index Tree)
+        </ul>
+        Space Tree
+        <ul style="list-style-type:none;">
+          &#10240; Segment Tree <br>
+          &#10240; Interval Tree <br>
+          &#10240; K-D Tree
+        </ul>
+    </ul>
+  <li>Union Find</li>
+    <ul style="list-style-type:none;">
+      &#10240; Quick Find <br>
+      &#10003; Quick Union
+        <ul style="list-style-type:none;">
+          &#10003; Union by rank <br>
+          &#10240; Union by size <br>
+          &#10240; Using path compression
+        </ul>
+    </ul>
+  <li>Heap</li>
+    <ul style="list-style-type:none;">
+      &#10003; Binary Max Heap <br>
+      &#10003; Binary Min Heap <br>
+      &#10240; Binomial Heap <br>
+      &#10240; Fibonacci Heap
+    </ul>
+</ul>
+<h2 id="algorithms">Algorithms</h2>
 
-<hr>
+<ul style="list-style-type:none;">
 
-### Data Structure
+  <li>Searching</li>
+    <ul style="list-style-type:none;">
+      &#10003; Sequential search<br>
+      &#10003; Binary search<br>
+    </ul>
 
-- [ ] List
-  - [x] Singly Linked List
-  - [x] Doubly Linked List
-  - [ ] Circular Linked List
-  - [ ] Xored Linked List
-  - [ ] Skip Linked List
-- [x] Stack
-  - [x] using array
-  - [x] using list
-- [x] Queue
-  - [x] Queue
-  - [x] Circular Queue
-  - [x] Deque
-  - [x] Priority Queue (implementation using max heap)
-- [ ] Tree
-  - [ ] Binary Tree
-    - [x] Binary Search Tree
-    - [ ] AVL Tree
-    - [ ] Red-Black Tree
-    - [ ] Splay Tree
-  - [ ] N-ary Tree
-    - [ ] B Tree
-    - [ ] 2-3 Tree
-    - [ ] Fenwick Tree (Index Tree)
-  - [ ] Space Tree
-   - [ ] Segment Tree
-   - [ ] Interval Tree
-   - [ ] K-D Tree
-- [ ] Union Find
-  - [x] Quick Find
-  - [ ] Quick Union
-    - [x] Union by rank
-    - [ ] Union by size
-    - [ ] Using path compression
-- [ ] Heap
-  - [x] Binary Heap
-  - [ ] Binomial Heap
-  - [ ] Fibonacci Heap
+  <li>Sorting</li>
+    <ul style="list-style-type:none;">
+      &#10003; Heap sort<br>
+      &#10003; Merge sort <br>
+      &#10003; Quick sort <br>
+      &#10240; Bubble sort <br>
+      &#10240; Insertion sort <br>
+      &#10240; Selection sort
+    </ul>
 
-<hr>
+  <li>Pattern Matching</li>
+    <ul style="list-style-type:none;">
+      &#10240; Naive Approach <br>
+      &#10003; KMP
+    </ul>
+  <li>Bits</li>
+    <ul style="list-style-type:none;">
+      &#10240; Parity <br>
+      &#10003; Bits count
+    </ul>
 
-### Coding Style
-Using <a  href="https://google.github.io/styleguide/cppguide.html" target="_blank"> goole c++ style guide</a>
-
-
-
-
-
-<!--
-### https://leetcode.com/adi-dev/
--->
+  <li>Graph</li>
+    <ul style="list-style-type:none;">
+      General Graph Algorithms
+        <ul style="list-style-type:none;">
+          &#10003; Beadth first search <br>
+          &#10003; Depth first search <br>
+          &#10240; Cycle Detection <br>
+          &#10240; Topological search <br>
+          &#10240; SCC (Strongly Connected Components)
+            <ul style="list-style-type:none;">
+              &#10240; Kosaraju-sharir's Algorithm <br>
+              &#10240; Tarjan's Algorithm
+            </ul>
+        </ul>
+    </ul>
+</ul>
+<h2 id="coding-style">Coding Style</h2>
