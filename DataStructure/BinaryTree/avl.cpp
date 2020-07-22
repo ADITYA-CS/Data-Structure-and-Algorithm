@@ -3,10 +3,11 @@
 using namespace std;
 
 struct Node{
-    Node *left;
-    int data;
-    Node *right;
-    int height;
+    Node* left;
+    Node* right;
+    int   data;
+    int   height;
+
     Node();
     Node(int);
     ~Node();
@@ -20,13 +21,13 @@ private:
     Node* RotateRight(Node*);
     Node* RotateLeftRight(Node*);
     Node* RotateRightLeft(Node*);
-    Node* Insert(Node *, Node *, int);
+    Node* Insert(Node *, int);
+    Node* Search(Node*, int);
 
     void PreOrder(Node *);
     void PostOrder(Node *);
     void InOrder(Node *);
     int Height(Node*);
-
 
 public:
     AVL();
@@ -38,6 +39,7 @@ public:
     void Insert(int);
 
     int Height();
+    Node* Search(int);
 };
 
 int main() {
@@ -53,6 +55,9 @@ int main() {
       avl.PostOrder();
     } else if (t == 4) {
       avl.InOrder();
+    } else if (t == 5) {
+      cin >> el;
+      cout << boolalpha << avl.Search(el) << endl;
     }
     cin >> t;
   }
@@ -80,6 +85,7 @@ Node::~Node(){
 AVL::AVL(){
   root_ = nullptr;
 }
+
 AVL::~AVL() {
   delete root_;
 }
@@ -125,15 +131,16 @@ int AVL::Height(Node* root) {
 }
 
 void AVL::Insert(int el) {
-  root_ = Insert(root_, nullptr, el);
+  root_ = Insert(root_, el);
 }
-Node * AVL::Insert(Node * root, Node * parent, int el) {
+
+Node * AVL::Insert(Node * root, int el) {
   if  (!root) {
     return new Node(el);
   }
 
   if (el < root->data) {
-    root->left = Insert(root->left, root, el);
+    root->left = Insert(root->left, el);
     if (Height(root->left) - Height(root->right) == 2) {
       if (el < root->left->data) {
         root = RotateRight(root);
@@ -142,9 +149,9 @@ Node * AVL::Insert(Node * root, Node * parent, int el) {
       }
     }
   } else if (el > root->data) {
-    root->right = Insert(root->right, root, el);
+    root->right = Insert(root->right, el);
     if (Height(root->left) - Height(root->right) == -2) {
-      if (el < root->right->data) {
+      if (el > root->right->data) {
         root = RotateLeft(root);
       } else {
         root = RotateRightLeft(root);
@@ -159,14 +166,14 @@ int AVL::Height() {
   return Height(root_);
 }
 
-
-
 void AVL::PreOrder() {
   return PreOrder(root_);
 }
+
 void AVL::PostOrder() {
   return PostOrder(root_);
 }
+
 void AVL::InOrder() {
   return InOrder(root_);
 }
@@ -180,15 +187,17 @@ void AVL::PreOrder(Node *root) {
     PreOrder(root->left);
     PreOrder(root->right);
 }
+
 void AVL::PostOrder(Node *root) {
     if (!root) {
       return;
     }
-    PostOrder(root->right);
     PostOrder(root->left);
+    PostOrder(root->right);
     cout << "val = " << root->data << " " <<  "bf = "
       << Height(root->left) - Height(root->right) << endl;
 }
+
 void AVL::InOrder(Node *root) {
     if (!root) {
       return;
@@ -197,4 +206,21 @@ void AVL::InOrder(Node *root) {
     cout << "val = " << root->data << " " <<  "bf = "
       << Height(root->left) - Height(root->right) << endl;
     InOrder(root->right);
+}
+
+Node* AVL::Search(int key) {
+  return Search(root_, key);
+}
+
+Node* AVL::Search(Node* root, int key) {
+  if (!root)
+    return nullptr;
+
+  if (root->data == key)
+    return root;
+
+  if (root->data < key)
+    return Search(root->right, key);
+
+  return Search(root->left, key);
 }
