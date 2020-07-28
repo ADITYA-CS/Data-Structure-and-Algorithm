@@ -255,7 +255,7 @@ Node* AVL::Delete(Node* root, int el) {
     return root;
   } else if (root->data > el) { // when element is smaller, check left-subtree
     root->left = Delete(root->left, el);
-    // when the balance factor is -2, rebalace it
+    // when the balance factor is -2, rebalance it
     if (BalanceFactor(root) == -2) {
       // if balance factor of right child is not 1
       // then rotate left
@@ -267,7 +267,7 @@ Node* AVL::Delete(Node* root, int el) {
     }
   } else if (root->data < el) { // when element is larger, check right-subtree
     root->right = Delete(root->right, el);
-    // when the balance factor is 2, rebalace it
+    // when the balance factor is 2, rebalance it
     if (BalanceFactor(root) == 2) {
       // if balance factor of left child is not -1
       // then rotate right
