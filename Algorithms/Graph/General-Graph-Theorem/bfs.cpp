@@ -27,7 +27,6 @@ enum class Status{
 class Graph {
 private:
   int order_;
-  int component_; // how many component the graph has;
   bool has_cycle_;
   vector<vector<int>> adj_list_;
 
@@ -39,7 +38,6 @@ public:
   void AddEdge(int, int);
   void Bfs();
   bool HasCycle();
-  int Component();
 };
 
 int main() {
@@ -53,11 +51,10 @@ int main() {
   }
   g.Bfs();
   cout << "Has Cycle : " << boolalpha << g.HasCycle() << "\n";
-  cout << "Number of component : " << g.Component() << "\n";
 }
 
 
-Graph::Graph(int order) : order_(order), component_(0), has_cycle_(false) {
+Graph::Graph(int order) : order_(order), has_cycle_(false) {
   adj_list_.resize(order_);
 }
 
@@ -67,13 +64,11 @@ void Graph::AddEdge(int u, int v) {
 
 void Graph::Bfs() {
   vector<Status> status(order_, Status::kUnDiscoverd);
-  component_ = 0;
   has_cycle_ = false;
 
   cout << "---------------------------------------------------\n";
   for (int i = 0; i < order_; i++) {
     if (status[i] == Status::kUnDiscoverd) {
-      component_ += 1;
       cout << "bfs spanning-tree\n";
       BfsVisit(i, status);
       cout << "\n---------------------------------------------------\n";
@@ -98,9 +93,6 @@ void Graph::BfsVisit(int source, vector<Status> & status) {
         has_cycle_ = true;
       } else {
         status[v] = Status::kVisited;
-        //
-        // or you can processes the vertex here
-        //
         q.push(v);
       }
     }
@@ -113,8 +105,4 @@ void Graph::BfsVisit(int source, vector<Status> & status) {
 
 bool Graph::HasCycle() {
   return has_cycle_;
-}
-
-int Graph::Component() {
-  return component_;
 }

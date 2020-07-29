@@ -26,7 +26,6 @@ enum class Status{
 class Graph {
 private:
   int order_;
-  int component_; // how many component the graph has;
   bool is_cycle_;
   vector<vector<int>> adj_list_;
 
@@ -38,7 +37,6 @@ public:
   void AddEdge(int, int);
   void Dfs();
   bool IsCycle();
-  int Component();
 };
 
 int main() {
@@ -52,13 +50,11 @@ int main() {
   }
   g.Dfs();
   cout << "Is Cycle : " << std::boolalpha << g.IsCycle() << "\n";
-  cout << "Number of component : " << g.Component() << "\n";
 }
 
 
 Graph::Graph(int order) {
   order_ = order;
-  component_ = 0;
   is_cycle_ = false;
   adj_list_.resize(order_);
 }
@@ -70,11 +66,9 @@ void Graph::AddEdge(int u, int v) {
 void Graph::Dfs() {
   vector<Status> status(order_, Status::kUnDiscoverd);
   int time = 0;
-
   cout << "---------------------------------------------------\n";
   for (int i = 0; i < order_; i++) {
     if (status[i] == Status::kUnDiscoverd) {
-      component_++;
       cout << "dfs spanning-tree\n";
       DfsVisit(i, status);
       cout << "\n---------------------------------------------------\n";
@@ -98,8 +92,4 @@ void Graph::DfsVisit(int u, vector<Status>& status) {
 
 bool Graph::IsCycle() {
   return is_cycle_;
-}
-
-int Graph::Component() {
-  return component_;
 }

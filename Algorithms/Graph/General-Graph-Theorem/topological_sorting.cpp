@@ -20,7 +20,9 @@ enum class Status{
   kDiscoverd,
   kVisited
 };
-
+/**
+ *  For the keeping record of current status of node in dfs
+ */
 class Graph {
 private:
   int order_;
