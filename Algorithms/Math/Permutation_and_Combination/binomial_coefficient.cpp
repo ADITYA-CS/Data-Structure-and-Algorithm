@@ -7,7 +7,7 @@ long long ncr(long long n, long long r) {
     if(r == 0 || r == n)
         return 1;
 
-    return ncr(n - 1, k - 1) + ncr(n - 1, k);
+    return ncr(n - 1, r - 1) + ncr(n - 1, r);
 }
 
 long long BinomialCoefficient(long long n, long long r) {
@@ -15,14 +15,11 @@ long long BinomialCoefficient(long long n, long long r) {
         return (long long) 0;
     if (r == 0 || r == n)
         return (long long) 1;
-    if (2 * r > n) // use symmetry
-        r = n - r;
 
-    long long num = n - r + 1;
-    long long res = num;
-    for (long long i = 2; i <= r; i++) {
-        num++;
-        res *= num;
+    r = min(r, n - r);
+    long long res = 1;
+    for (long long i = 1; i <= r; i++) {
+        res *= (n - r + i);
         res /= i;
     }
 
@@ -31,10 +28,6 @@ long long BinomialCoefficient(long long n, long long r) {
 
 int main() {
     long long n, r;
-    cout << "Calcaulate\n";
-    cout << "n\n";
-    cout << "  C\n";
-    cout << "   r\n\v";
     cout << "n : ";
     cin >> n;
     cout << "r : ";
