@@ -7,7 +7,7 @@
   <li><a href="#coding-style">Coding Style</a></li>
 </ul>
 
-<h2 id="data-structure">Data Structure</h2>
+<h2 id="data-structure">Data Structure In C/C++</h2>
 <ul style="list-style-type:none;">
 
   <li>List</li>
@@ -98,7 +98,7 @@
       &#10240; Naive Approach <br>
       &#10003; KMP
     </ul>
-  <li>Bits</li>
+  <li>Bits Manipulation</li>
     <ul style="list-style-type:none;">
       &#10240; Parity <br>
       &#10003; Bits count
